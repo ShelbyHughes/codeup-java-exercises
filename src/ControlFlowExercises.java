@@ -8,11 +8,15 @@ public class ControlFlowExercises {
             i++;
         }
 
+//        -----------------------------------------------------------------------------
+
         int l = 100;
         do{
             System.out.println(l);
             l-=5;
         }while(l > -10);
+
+//        -----------------------------------------------------------------------------
 
         long c = 2;
         do {
@@ -20,13 +24,19 @@ public class ControlFlowExercises {
             c*=c;
         } while(c < 1000000);
 
+//       -----------------------------------------------------------------------------
+
         for(int k = 5; k <= 15; k++){
             System.out.println(k);
         }
 
+//        -----------------------------------------------------------------------------
+
         for(int m = 100; m > -10; m-=5){
             System.out.println(m);
         }
+
+//        -----------------------------------------------------------------------------
 
         for (int n = 1; n <= 100; n++) {
             if (n % 15 == 0) {
@@ -39,6 +49,8 @@ public class ControlFlowExercises {
                 System.out.println(n);
             }
         }
+
+//        -----------------------------------------------------------------------------
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("What number would you like to go up to? ");
@@ -55,6 +67,8 @@ public class ControlFlowExercises {
             System.out.println();
             counter++;
         }
+
+//        -----------------------------------------------------------------------------
 
         char a;
         do {
