@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 public class ConsoleExercises {
     public static void main(String args[]) {
@@ -11,42 +12,50 @@ public class ConsoleExercises {
 
 //        Don't change the value of the variable; instead, reference one of the links above and use System.out.format to accomplish this.
 
-        double pi = (float) 3.14159;
-        System.out.format("The value of pi is approximately %s", pi);
+        double pi = 3.14159;
+        System.out.printf("\nThe Value of pi is approximately %f.\n\n", pi);
 
 //        Prompt a user to enter a integer and store that value in an int variable using the nextInt method.
 
         Scanner scanner = new Scanner(System.in);
-
-        System.out.print("\nEnter an integer: ");
-        int userInput = scanner.nextInt();
-
-        System.out.println("You entered: --> \"" + userInput + "\" <--");
+        int i = 0;
+        while(i != -1){
+            System.out.print("Enter an integer: ");
+            try {
+                i = scanner.nextInt();
+                System.out.println("\nThe number is " + i + ".\n");
+            }catch(InputMismatchException ime){
+                System.out.println("This is not an integer");
+                i = 0;
+            }
+        }
 
 //        What happens if you input something that is not an integer?
 
-        // throws a run time exception
+        // throws a Input mismatch Exception
 
 //        Prompt a user to enter 3 words, and store each of them in a separate variable. Then, display them back in the console, each on a newline.
 
-        System.out.print("\nEnter a word: ");
-        String userInput1 = scanner.next();
-        System.out.print("\nEnter a second word: ");
-        String userInput2 = scanner.next();
-        System.out.print("\nEnter a third word: ");
-        String userInput3 = scanner.next();
+        System.out.print("Enter 3 words: ");
+        String word01, word02, word03;
+        word01 = scanner.next();
+        word02 = scanner.next();
+        word03 = scanner.next();
+        System.out.printf("\n the words are \"%s\", \"%s\", and \"%s\".\n", word01, word02, word03);
+        scanner.nextLine();
 
-        System.out.println("You entered: --> \"" + userInput1 + ", " + userInput2 +", " + userInput3 + "\" <--");
 
 //        What happens if you enter less than 3 words?
 //        What happens if you enter more than 3 words?
 
 //        Prompt a user to enter a sentence, then store that sentence in a String variable using the next method. Then, display that sentence back to the user.
 
-        System.out.print("Enter a sentence: ");
-        String userInput4 = scanner.next();
+        System.out.print("\nEnter a sentence: ");
+        scanner.useDelimiter("\n");
+        String sentence = scanner.next();
+        scanner.nextLine();
+        System.out.printf("\nThe sentence is \"%s\"\n", sentence);
 
-        System.out.println(userInput4);
 
 //        do you capture all of the words?
 
@@ -54,20 +63,34 @@ public class ConsoleExercises {
 
 //        Rewrite the above example using the nextLine method.
 
-        System.out.print("Enter a sentence: ");
-        String userInput5 = scanner.nextLine();
-
-        System.out.println(userInput5);
+        System.out.print("\nEnter a sentence: ");
+        String sentence1 = scanner.nextLine();
+        System.out.printf("\nThe sentence is \"%s\"\n", sentence1);
 
 //        Prompt the user to enter values of length and width of a classroom at Codeup.
 
-        System.out.print("Enter the length of the classroom: ");
-        String userInput6 = scanner.next();
+        Scanner scan = new Scanner(System.in);
+        scanner.useDelimiter("\n");
+        System.out.print("\nEnter the width: ");
+        String sWidth = scan.nextLine();
+        double width = Double.parseDouble(sWidth);
+        System.out.print("\nEnter the length: ");
+        String sLength = scan.nextLine();
+        double length = Double.parseDouble(sLength);
+        System.out.printf("\nThe dimensions are %f by %f. the perimeter is %f and the area is %f.\n", length, width, 2*(length + width), length * width);
 
-        System.out.print("Enter the width of the classroom: ");
-        String userInput7 = scanner.next();
+        // Calculate the perimeter and area of Codeup's classroom
+
+        scanner.useDelimiter("\n");
+        System.out.print("\nHey! Yo, enter the width: ");
+        double width1 = scanner.nextFloat();
+        System.out.print("Enter the length: ");
+        double length1 = scanner.nextFloat();
+        System.out.printf("The dimensions are %f by %f. The perimeter is %f and the area is %f.\n", length1, width1, 2 * (length1 + width1), length1 * width1);
+
 
 //        Use the nextLine method to get user input and [parse](https://docs.oracle.com/javase/7/docs/api/java/lang/Integer.html#parseInt(java.lang.String) the resulting string to a numeric type.
+
 
 //        Assume that the rooms are perfect rectangles.
 //        Assume that the user will enter valid numeric data for length and width.
