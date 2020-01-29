@@ -23,8 +23,9 @@ public class Bob {
                     System.out.println("Whatever.");
                 }
             Scanner scan = new Scanner(System.in);
-            System.out.println("Continue(Y/N)");
+            System.out.print("Continue(Y/N) ");
             a = scan.next().charAt(0);
         }while(a == 'Y' || a == 'y');
+        scanner.close();
     }
 }
