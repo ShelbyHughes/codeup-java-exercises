@@ -105,9 +105,9 @@ public class ControlFlowExercises {
              a = scanner.next().charAt(0);;
 
             if(a == 'y' || a == 'Y') {
-                System.out.println("Contine \t\t" + a);
+                System.out.println("Continue");
             }else {
-                System.out.println("End Program \t\t" + a);
+                System.out.println("End Program");
             }
 
         }while(a =='Y'|| a =='y');
