@@ -5,23 +5,24 @@ public class StringExercise {
 //        We don't need no education
 //        We don't need no thought control
 
-        String pinkFloyd = "We don't need no ";
-        System.out.println(pinkFloyd + "education \n" + pinkFloyd + "thought control");
+        String string = "We don't need no education \n";
+        string += "We don't need no thought control";
+        System.out.println(string);
 
 //        Check "this" out!, "s inside of "s!
 
-        String attempt = "Check \"this\" out, ";
-        System.out.println(attempt + "\"s inside of \"s!");
+        string = "Check \"this\" out, \"s inside of \"s!";
+        System.out.println(string);
 
 //        In windows, the main drive is usually C:\
 
-        String windows = "In windows, the main drive is usually ";
-        System.out.println(windows + "C:\\");
+        string = "In windows, the main drive is usually C:\\";
+        System.out.println(string);
 
 //        I can do backslashes \, double backslashes \\,
 //        and the amazing triple backslash \\\!
 
-        String amazing = "I can do backslashes \\, double backslashes \\\\, ";
-        System.out.println(amazing + "and the amazing triple backslash \\\\\\!");
+        string = "I can do backslashes \\, double backslashes \\\\, and the amazing triple backslash \\\\\\! ";
+        System.out.println(string);
     }
 }
