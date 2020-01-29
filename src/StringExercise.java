@@ -6,8 +6,7 @@ public class StringExercise {
 //        We don't need no thought control
 
         String pinkFloyd = "We don't need no ";
-        System.out.println(pinkFloyd + "education");
-        System.out.println(pinkFloyd + "thought control");
+        System.out.println(pinkFloyd + "education \n" + pinkFloyd + "thought control");
 
 //        Check "this" out!, "s inside of "s!
 
