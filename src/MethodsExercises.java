@@ -9,87 +9,76 @@ public class MethodsExercises {
        System.out.println(division(10,2));
        System.out.println(modulus(10,2));
        System.out.println(getInteger(1,10));
-       System.out.println(factorial());
+       System.out.println(getIntegerR(1,10));
+       factorial();
+//       diceRoll();
+        rollDice();
 
-//       HighLow game = new HighLow(5);
+//       HighLow game = new HighLow();
 //       game.PlayGame();
     }
-    public static int addition(int num1, int num2){
-        int total = num1 + num2;
-        return total;
+    public static double addition(double num1, double num2){
+        return num1 + num2;
     }
-    public static int subtraction(int num1, int num2){
-        int total = num1 - num2;
-        return total;
+    public static double subtraction(double num1, double num2){
+        return num1 - num2;
     }
-    public static int multiplication (int num1, int num2){
-        int total = num1 * num2;
-        return total;
+    public static double multiplication (double num1, double num2){
+        return num1 * num2;
     }
-    public static int division(int num1, int num2){
-        int total = num1 / num2;
-        return total;
+    public static double division(double num1, double num2){
+        return num1 / num2;
     }
-    public static int modulus(int num1, int num2){
-        int divisible = num1 % num2;
-        return divisible;
+    public static double modulus(double num1, double num2){
+        return num1 % num2;
     }
     public static int getInteger(int min, int max){
-        int number;
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number between 1 and 10: ");
-        String input = scanner.nextLine();
-        number = Integer.parseInt(input);
-
-        if (number >= min && number <= max) {
-            return number;
-        } else if (number < min || number > max) {
-            System.out.println("Not in range");
-        } else {
-            System.out.println("Not a number");
-        }
-        return getInteger(min, max);
+        int answer;
+        Scanner scan = new Scanner(System.in);
+        do{
+            System.out.println("Enter a number between " + min + " and " + max + ": ");
+            answer = scan.nextInt();
+        }while(answer < min || answer > max);
+        return answer;
     }
-    public static int factorial(){
-        int number;
-        System.out.println("Enter a number: ");
-        Scanner scanner = new Scanner(System.in);
-
-        String input = scanner.nextLine();
-        number = Integer.parseInt(input);
-
-        scanner.close();
-        int fact = 1;
-        for(int i = 1; i <= number; i++)
-        {
-            fact = fact * i;
+    public static int getIntegerR(int min, int max){
+        int answer;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter a number between " + min + " and " + max + ": ");
+        answer = scan.nextInt();
+        if(answer < min || answer > max) {
+            return getIntegerR(min, max);
+        }else {
+            return answer;
         }
-        return fact;
     }
-//    public static int diceRoll (){
-//
-//    }
-    public static void guessingGame(){
-        char a;
-        do {
-            Random rand = new Random();
-            int rand_int1 = rand.nextInt(101);
-            System.out.println("Guess the random number: ");
-            Scanner scanner = new Scanner(System.in);
-            int number;
-            String input = scanner.nextLine();
-            number = Integer.parseInt(input);
-            if (rand_int1 == number) {
-                System.out.println("Good Guess");
-            } else if (rand_int1 > number) {
-                System.out.println("Lower");
-            } else {
-                System.out.println("Higher");
+    public static void factorial(){
+        int base = getInteger(1,10);
+        long fact = 1;
+        String output = "! = 1";
+        System.out.printf("1%s\n", output);
+        for(int i = 2; i < base; i++){
+            fact *= i;
+            output += " x " + i;
+            System.out.printf("%d%s = %d\n" , i, output, fact);
+        }
+    }
+    public static int rollDice(){
+        int dice1 = 0;
+        int dice2 = 0;
+        int numSides = 0;
+        Scanner scan = new Scanner(System.in);
+        System.out.println("How many sides per die (2 dice)? ");
+        numSides = getInteger(1,21);
+        while(true){
+            dice1 = (int) Math.round(Math.floor(Math.random() * numSides +1));
+            dice2 = (int) Math.round(Math.floor(Math.random() * numSides +1));
+            System.out.printf("%d + %d = %d\n", dice1, dice2, (int)addition(dice1,dice2));
+            System.out.println("Would you like to roll again?");
+            String answer = scan.next();
+            if(answer.toLowerCase().contains("n")){
+                return (int) addition(dice1,dice2);
             }
-            System.out.println("Continue(Y/N)");
-            Scanner scan = new Scanner(System.in);
-            a = scan.next().charAt(0);
-            scan.close();
-        }while(a == 'Y' || a == 'y');
+        }
     }
 }
