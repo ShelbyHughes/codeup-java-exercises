@@ -11,11 +11,8 @@ public class MethodsExercises {
        System.out.println(getInteger(1,10));
        System.out.println(getIntegerR(1,10));
        factorial();
-//       diceRoll();
-        rollDice();
-
-//       HighLow game = new HighLow();
-//       game.PlayGame();
+       rollDice();
+       hiLow();
     }
     public static double addition(double num1, double num2){
         return num1 + num2;
@@ -81,4 +78,19 @@ public class MethodsExercises {
             }
         }
     }
+    public static void hiLow(){
+        int guess = 0;
+        int secret = (int) Math.round(Math.floor(Math.random()* 100 +1));
+        System.out.println("Lets play a guessing game! Guess what number I'm thinking of?");
+        guess = getInteger(1,100);
+        int guesses = 1;
+        for(; guesses <= 10 && guess != secret; guesses++){
+            if(guess < secret) System.out.println("Higher");
+            else if(guess > secret) System.out.println("Lower");
+            guess = getInteger(1,100);
+        }
+        if(guess == secret) System.out.println("Good guess! You win!!! \nIt took you " + guesses + " guesses.");
+        else System.out.println("Sorry, you ran out of guesses.");
+    }
 }
+
