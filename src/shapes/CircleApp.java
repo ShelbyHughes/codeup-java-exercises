@@ -1,9 +1,16 @@
 package shapes;
 
+import util.Input;
+
 public class CircleApp {
     public static void main(String[] args){
-        Circle circle = new Circle(5);
-        System.out.println(circle.getArea());
-        System.out.println(circle.getCircumference());
+        Input input = new Input();
+        do {
+            double radius = input.getDouble("What is the radius of the circle?: ");
+            Circle circle = new Circle(radius);
+            System.out.println("Area of circle = " + circle.getArea());
+            System.out.println("Circumference = " + circle.getCircumference());
+        }while(input.yesNo("Do you want to make another?"));
+        System.out.println(Circle.getCirclesCreated() + " circles created");
     }
 }

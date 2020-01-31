@@ -23,14 +23,14 @@ public class Input {
         return userInput;
     }
 
-    boolean yesNo(){
+    public boolean yesNo(){
         String answer;
         System.out.println("What is your answer? (Yes/no): ");
         answer = scan.next();
         return answer.toLowerCase().startsWith("y");
     }
 
-    boolean yesNo(String prompt){
+    public boolean yesNo(String prompt){
         String answer;
         System.out.println(prompt);
         answer = scan.next();
@@ -73,7 +73,7 @@ public class Input {
         return userInput;
     }
 
-    double getDouble(double min, double max){
+    public double getDouble(double min, double max){
         double answer;
         System.out.println("Enter a number between " + min + " and " + max + ": ");
         answer = scan.nextDouble();
@@ -84,7 +84,7 @@ public class Input {
         }
     }
 
-    double getDouble(double min, double max, String prompt){
+   public double getDouble(double min, double max, String prompt){
         double answer;
         System.out.println(prompt);
         answer = scan.nextDouble();
@@ -95,14 +95,14 @@ public class Input {
         }
     }
 
-    double getDouble(){
+    public double getDouble(){
         double userInput;
         System.out.println("Enter a double(#.###): ");
         userInput = scan.nextDouble();
         return userInput;
     }
 
-    double getDouble(String prompt){
+    public double getDouble(String prompt){
         double userInput;
         System.out.println(prompt);
         userInput = scan.nextDouble();
