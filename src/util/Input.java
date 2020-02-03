@@ -48,7 +48,7 @@ public class Input {
         }
     }
 
-    int getInt(int min, int max, String prompt){
+    public int getInt(int min, int max, String prompt){
         int answer;
         System.out.println(prompt);
         answer = scan.nextInt();
