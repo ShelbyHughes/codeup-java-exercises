@@ -43,4 +43,11 @@ public class Person {
     public void sayHello(){
         System.out.println("Hello from " + this.name + "!");
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                '}';
+    }
 }
