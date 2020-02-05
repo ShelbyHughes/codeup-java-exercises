@@ -1,0 +1,19 @@
+4 pillars of OOP
+1. Abstract
+2. Encapsulation
+3. Inheritance
+4. Polymorphism
+
+Abstraction
+Abstraction is the process of exposing essential details and hiding (ignoring) unnecessary details to reduce complexity for the user
+
+Encapsulation: Bundling data and operations (Properties and methods) together into a cohesive entity.
+Classes
+Instance
+
+Inheritance: deriving a new type (class) from an existing type.
+Extends classes
+Overriding
+super
+
+Polymorphism: Allows an entity to take on different meanings in different contexts.
