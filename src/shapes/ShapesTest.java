@@ -9,7 +9,7 @@ public class ShapesTest {
 //        System.out.println(box2.getArea());
 //        System.out.println(box2.getPerimeter());
         Measurable myShape;
-        myShape = new Rectangle(5,5);
+        myShape = new Rectangle(7,4);
         System.out.println(myShape.getArea());
         System.out.println(myShape.getPerimeter());
         myShape = new Square(5);
