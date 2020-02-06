@@ -16,7 +16,7 @@ public class Input {
         return userInput;
     }
 
-    String getString(String prompt){
+   public String getString(String prompt){
         String userInput;
         System.out.println(prompt);
         userInput = scan.nextLine();
@@ -33,7 +33,7 @@ public class Input {
     public boolean yesNo(String prompt){
         String answer;
         System.out.println(prompt);
-        answer = scan.next();
+        answer = scan.nextLine();
         return answer.toLowerCase().startsWith("y");
     }
 
