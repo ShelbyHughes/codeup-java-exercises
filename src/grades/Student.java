@@ -1,14 +1,17 @@
 package grades;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Student {
     private String name;
     private ArrayList<Integer> grades = new ArrayList<>();
+    private HashMap<String, String> attendance = new HashMap<>();
 
-    public Student(String name, ArrayList<Integer> grades){
+    public Student(String name){
         this.name = name;
-        this.grades = grades;
+        this.grades = new ArrayList<>();
+        this.attendance = new HashMap<>();
     }
 
     public String getName(){
@@ -27,6 +30,40 @@ public class Student {
         double avg= sum/grades.size();
         return avg;
     }
+
+    public void recordAttendance(String date, String value){
+        if(value.equalsIgnoreCase("A") || value.equalsIgnoreCase("P")){
+            this.attendance.put(date, value);
+        }
+    }
+
+    public double getAttendancePrecent(){
+        double absent = 0;
+        double totalDays = 0;
+        for(String key : attendance.keySet()){
+            if(attendance.get(key).equalsIgnoreCase("A")){
+                absent++;
+            }
+            totalDays++;
+        }
+        return ((totalDays - absent)/ totalDays) * 100;
+
+    }
+
+    public ArrayList<Integer> getGrades(){
+        return this.grades;
+    }
+
+    public ArrayList<String> specificAbsent(){
+        ArrayList<String> result = new ArrayList<>();
+        for(String key : attendance.keySet()){
+            if(attendance.get(key).equalsIgnoreCase("A")){
+                result.add(key);
+            }
+        }
+        return result;
+    }
+
     public static void main(String[] args){
 //        ArrayList<Integer> grades2 = new ArrayList<>();
 //        grades2.add(97);

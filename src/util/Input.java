@@ -66,7 +66,7 @@ public class Input {
         return userInput;
     }
 
-    int getInt(String prompt){
+    public int getInt(String prompt){
         int userInput;
         System.out.println(prompt);
         userInput = scan.nextInt();
