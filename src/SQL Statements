@@ -1,0 +1,43 @@
+Basic SQL Statements
+
+Use the INSERT statement to create data
+use the SELECT statement to read data
+use the UPDATE statement to update data
+use DELETE statement to delete data
+introduce the WHERE clause
+Understand MySQL operators
+
+What the CRUD?
+Create, Read, Update, Delete
+CRUD is a design pattern
+A design pattern is a shorthand way to talking about a complex and repeatable solution to a common problem
+The reason to use a design pattern like CRUD is to make it easier to understand and maintain
+CRUD is used in several areas including databases designs, a web API, a cache servers
+SO far we have learned the basic SQL commands to create users, databases
+
+The insert statement
+The insert statement inserts data into the databases
+
+Basic format
+INSERT INTO table_name (field1, field2, ...)
+VALUES ('value1', 'value2', ...);
+
+Example
+INSERT INTO quotes (author_first_name, author_last_name, content)
+VALUES ('Douglas', 'Adams', 'I love deadlines. I love the whooshing noise they make as they go by.');
+
+INSERT INTO quotes (author_first_name, author_last_name, content)
+VALUES ('Douglas', 'Adams',    'Time is an illusion. Lunchtime doubly so.'),
+       ('Mark',    'Twain',    'Clothes make the man. Naked people have little or no influence on society.'),
+       ('Kurt',    'Vonnegut', 'The universe is a big place, perhaps the biggest.');
+
+The Select Statement
+
+We use Select to find and return rows from a table
+
+Basic format
+Select column1, column2, ....
+
+Example
+SELECT author_last_name, content FROM quotes;
+
